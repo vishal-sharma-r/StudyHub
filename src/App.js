@@ -11,4 +11,3 @@ function App() {
   );
 }
 export default App;
-// changes make efffect deleted from start of app
