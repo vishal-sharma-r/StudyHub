@@ -1,16 +1,21 @@
-import React from "react";
-import { Link } from "react-router-dom";
-import { FaArrowRight } from "react-icons/fa";
-import HighLightText from "../components/core/HomePage/HighLightText";
-import CTAButton from "../components/core/HomePage/Button";
-import Banner from "../assets/Images/banner.mp4";
-import CodeBlocks from "../components/core/HomePage/CodeBlocks";
-import TimelineSection from "../components/core/HomePage/TimelineSection";
-import LearningLanguageSection from "../components/core/HomePage/LearningLanguageSection";
-import InstructorSection from "../components/core/HomePage/InstructorSection";
-import Footer from "../components/common/Footer";
-import ExploreMore from "../components/core/HomePage/ExploreMore";
-const Home = () => {
+// Icons Import
+import { FaArrowRight } from "react-icons/fa"
+import { Link } from "react-router-dom"
+
+// Image and Video Import
+import Banner from "../assets/Images/banner.mp4"
+// Component Imports
+import Footer from "../components/common/Footer"
+// import ReviewSlider from "../components/common/ReviewSlider"
+import CTAButton from "../components/core/HomePage/Button"
+import CodeBlocks from "../components/core/HomePage/CodeBlocks"
+import ExploreMore from "../components/core/HomePage/ExploreMore"
+import HighlightText from "../components/core/HomePage/HighLightText"
+import InstructorSection from "../components/core/HomePage/InstructorSection"
+import LearningLanguageSection from "../components/core/HomePage/LearningLanguageSection"
+import TimelineSection from "../components/core/HomePage/TimelineSection"
+
+function Home() {
   return (
     <div>
       {/* Section 1 */}
@@ -28,16 +33,19 @@ const Home = () => {
         {/* Heading */}
         <div className="text-center text-4xl font-semibold">
           Empower Your Future with
-          <HighLightText text={"Coding Skills"} />
+          <HighlightText text={"Coding Skills"} />
         </div>
 
+        {/* Sub Heading */}
         <div className="-mt-3 w-[90%] text-center text-lg font-bold text-richblack-300">
           With our online coding courses, you can learn at your own pace, from
           anywhere in the world, and get access to a wealth of resources,
           including hands-on projects, quizzes, and personalized feedback from
           instructors.
         </div>
-        <div className="flex flex-row gap-7 mt-8">
+
+        {/* CTA Buttons */}
+        <div className="mt-8 flex flex-row gap-7">
           <CTAButton active={true} linkto={"/signup"}>
             Learn More
           </CTAButton>
@@ -58,14 +66,14 @@ const Home = () => {
           </video>
         </div>
 
-        {/* code section 1 */}
+        {/* Code Section 1  */}
         <div>
           <CodeBlocks
             position={"lg:flex-row"}
             heading={
               <div className="text-4xl font-semibold">
                 Unlock your
-                <HighLightText text={"coding potential"} /> with our online
+                <HighlightText text={"coding potential"} /> with our online
                 courses.
               </div>
             }
@@ -87,6 +95,7 @@ const Home = () => {
             backgroundGradient={<div className="codeblock1 absolute"></div>}
           />
         </div>
+
         {/* Code Section 2 */}
         <div>
           <CodeBlocks
@@ -94,7 +103,7 @@ const Home = () => {
             heading={
               <div className="w-[100%] text-4xl font-semibold lg:w-[50%]">
                 Start
-                <HighLightText text={"coding in seconds"} />
+                <HighlightText text={"coding in seconds"} />
               </div>
             }
             subheading={
@@ -116,11 +125,11 @@ const Home = () => {
           />
         </div>
 
-        <ExploreMore/>
+        {/* Explore Section */}
+        <ExploreMore />
       </div>
 
-      {/* section 2 */}
-
+      {/* Section 2 */}
       <div className="bg-pure-greys-5 text-richblack-700">
         <div className="homepage_bg h-[320px]">
           {/* Explore Full Catagory Section */}
@@ -145,7 +154,7 @@ const Home = () => {
           <div className="mb-10 mt-[-100px] flex flex-col justify-between gap-7 lg:mt-20 lg:flex-row lg:gap-0">
             <div className="text-4xl font-semibold lg:w-[45%] ">
               Get the skills you need for a{" "}
-              <HighLightText text={"job that is in demand."} />
+              <HighlightText text={"job that is in demand."} />
             </div>
             <div className="flex flex-col items-start gap-10 lg:w-[40%]">
               <div className="text-[16px]">
@@ -158,23 +167,30 @@ const Home = () => {
               </CTAButton>
             </div>
           </div>
+
+          {/* Timeline Section - Section 2 */}
           <TimelineSection />
+
+          {/* Learning Language Section - Section 3 */}
           <LearningLanguageSection />
         </div>
       </div>
 
-      {/* section 3 */}
-      <div className="w-11/12 mx-auto max-w-maxContent flex flex-col items-center justify-between gap-8 first first-letter bg-richblack-900 text-white">
+      {/* Section 3 */}
+      <div className="relative mx-auto my-20 flex w-11/12 max-w-maxContent flex-col items-center justify-between gap-8 bg-richblack-900 text-white">
+        {/* Become a instructor section */}
         <InstructorSection />
-        <h2 className="text-center text-4xl font-semibold mt-10">
-          Reviews from Other learners
-        </h2>
-        {/* Reviews from others */}
+
+        {/* Reviws from Other Learner */}
+        <h1 className="text-center text-4xl font-semibold mt-8">
+          Reviews from other learners
+        </h1>
+        {/* <ReviewSlider /> */}
       </div>
 
       {/* Footer */}
       <Footer />
     </div>
-  );
-};
-export default Home;
+  )
+}
+export default Home
