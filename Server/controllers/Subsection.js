@@ -9,7 +9,6 @@ exports.createSubSection = async (req, res) => {
     // Extract necessary information from the request body
     const { sectionId, title, description } = req.body
     const video = req.files.videoFile
-
     // Check if all necessary fields are provided
     if (!sectionId || !title || !description || !video) {
       return res
