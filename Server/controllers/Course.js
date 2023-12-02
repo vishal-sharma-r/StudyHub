@@ -297,7 +297,7 @@ exports.getFullCourseDetails = async (req, res) => {
           path: "additionalDetails",
         },
       })
-      .populate("categ  ory")
+      .populate("category")
       .populate("ratingAndReviews")
       .populate({
         path: "courseContent",
@@ -393,7 +393,7 @@ exports.deleteCourse = async (req, res) => {
     }
 
     // Unenroll students from the course
-    const studentsEnrolled = course.studentsEnroled
+    const studentsEnrolled = course.studentsEnrolled
     for (const studentId of studentsEnrolled) {
       await User.findByIdAndUpdate(studentId, {
         $pull: { courses: courseId },
