@@ -55,6 +55,7 @@ exports.categoryPageDetails = async (req, res) => {
         .populate({
           path: "courses",
           match: { status: "Published" },
+          
           populate: "ratingAndReviews",
         })
         .exec()
