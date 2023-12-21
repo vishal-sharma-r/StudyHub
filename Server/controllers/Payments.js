@@ -12,7 +12,9 @@ const CourseProgress = require("../models/CourseProgress")
 
 // Capture the payment and initiate the Razorpay order
 exports.capturePayment = async (req, res) => {
+  // console.log("capture payment1",req)
   const { courses } = req.body
+  // console.log("userId",req.user.id);
   const userId = req.user.id
   if (courses.length === 0) {
     return res.json({ success: false, message: "Please Provide Course ID" })
@@ -58,7 +60,7 @@ exports.capturePayment = async (req, res) => {
   try {
     // Initiate the payment using Razorpay
     const paymentResponse = await instance.orders.create(options)
-    console.log(paymentResponse)
+    console.log("payment Response",paymentResponse)
     res.json({
       success: true,
       data: paymentResponse,
@@ -109,8 +111,9 @@ exports.verifyPayment = async (req, res) => {
 exports.sendPaymentSuccessEmail = async (req, res) => {
   const { orderId, paymentId, amount } = req.body
 
-  const userId = req.user.id
-
+  const userId = req.user.id;
+  console.log(amount,userId);
+    console.log("send Payment Successs",req);
   if (!orderId || !paymentId || !amount || !userId) {
     return res
       .status(400)
@@ -151,7 +154,7 @@ const enrollStudents = async (courses, userId, res) => {
       // Find the course and enroll the student in it
       const enrolledCourse = await Course.findOneAndUpdate(
         { _id: courseId },
-        { $push: { studentsEnroled: userId } },
+        { $push: { studentsEnrolled: userId } },
         { new: true }
       )
 

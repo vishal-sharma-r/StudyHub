@@ -75,7 +75,7 @@ exports.contactUsEmail = (
     <body>
         <div class="container">
             <a href="https://github.com"><img class="logo"
-                    src="https://i.ibb.co/7Xyj3PC/logo.png" alt=""></a>
+                    src="https://res.cloudinary.com/dvnvedyrb/image/upload/v1694806883/StudyHub/StudyHub_LO_ogo_bxl8ts.png" alt=""></a>
             <div class="message">Contact Form Confirmation</div>
             <div class="body">
                 <p>Dear ${firstname} ${lastname},</p>
