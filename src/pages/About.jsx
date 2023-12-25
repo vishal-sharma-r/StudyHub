@@ -9,7 +9,7 @@ import LearningGrid from "../components/core/AboutPage/LearningGrid";
 import Quote from "../components/core/AboutPage/Quote";
 import StatsComponent from "../components/core/AboutPage/Stats";
 import HighLightText from "../components/core/HomePage/HighLightText";
-// import ReviewSlider from "../components/common/ReviewSlider"
+import ReviewSlider from "../components/common/ReviewSlider"
 import Footer from "../components/common/Footer";
 
 const About = () => {
@@ -120,7 +120,7 @@ const About = () => {
           Reviews from other learners
         </h1>
         {/* <ReviewSlider /> */}
-        {/* <ReviewSlider /> */}
+        <ReviewSlider />
       </div>
       <Footer />
     </div>

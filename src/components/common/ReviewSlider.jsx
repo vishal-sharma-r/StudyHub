@@ -2,7 +2,6 @@ import React, { useEffect, useState } from "react"
 import ReactStars from "react-rating-stars-component"
 // Import Swiper React components
 import { Swiper, SwiperSlide } from "swiper/react"
-
 // Import Swiper styles
 import "swiper/css"
 import "swiper/css/free-mode"
@@ -11,7 +10,7 @@ import "../../App.css"
 // Icons
 import { FaStar } from "react-icons/fa"
 // Import required modules
-import { Autoplay, FreeMode, Pagination } from "swiper"
+import { Autoplay, FreeMode, Pagination,Navigation } from "swiper"
 
 // Get apiFunction and the endpoint
 import { apiConnector } from "../../services/apiconnector"
@@ -42,18 +41,23 @@ function ReviewSlider() {
           slidesPerView={2}
           spaceBetween={25}
           loop={true}
-          freeMode={true}
+          modules={[Autoplay, Pagination,Navigation]}
+          navigation={true}
+          breakpoints={{
+            1024: {
+              slidesPerView: 2,
+            },
+          }}
           autoplay={{
-            delay: 2500,
+            delay: 2000,
             disableOnInteraction: false,
           }}
-          modules={[FreeMode, Pagination, Autoplay]}
-          className="w-full "
+          className="max-h-[30rem] w-full "
         >
           {reviews.map((review, i) => {
             return (
               <SwiperSlide key={i}>
-                <div className="flex flex-col min-h-[150px] gap-3 bg-richblack-800 p-3 text-[14px] text-richblack-25">
+                <div className="flex flex-col min-h-[200px] gap-3 bg-richblack-800 p-3 text-[14px] text-richblack-25">
                   <div className="flex items-center gap-4">
                     <img
                       src={

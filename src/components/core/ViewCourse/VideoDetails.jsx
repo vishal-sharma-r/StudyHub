@@ -11,7 +11,8 @@ import { updateCompletedLectures } from "../../../slices/viewCourseSlice"
 import IconBtn from "../../common/IconBtn"
 
 const VideoDetails = () => {
-  const { courseId, sectionId, subSectionId } = useParams()
+  const { courseId, sectionId, subSectionId } = useParams();
+  // console.log(subSectionId,courseId,sectionId);
   const navigate = useNavigate()
   const location = useLocation()
   const playerRef = useRef(null)
@@ -35,13 +36,13 @@ const VideoDetails = () => {
         const filteredData = courseSectionData.filter(
           (course) => course._id === sectionId
         )
-        // console.log("filteredData", filteredData)
+      
         const filteredVideoData = filteredData?.[0]?.subSection.filter(
           (data) => data._id === subSectionId
         )
         // console.log("filteredVideoData", filteredVideoData)
-        setVideoData(filteredVideoData[0])
-        setPreviewSource(courseEntireData.thumbnail)
+        setVideoData(filteredVideoData?.[0])
+        setPreviewSource(courseEntireData?.thumbnail)
         setVideoEnded(false)
       }
     })()
