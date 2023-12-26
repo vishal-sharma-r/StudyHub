@@ -23,10 +23,9 @@ app.use(cookieParser());
 // make use of cors to do frontend request
 app.use(
   cors({ 
-    // origin: "http://localhost:3000",
-    origin: JSON.parse(process.env.CORS_ORIGIN),
+    origin: "http://localhost:3000",
+    // origin: JSON.parse(process.env.CORS_ORIGIN),
     credentials: true,
-    maxAge: 14400,
     })
 );
 // file upload
