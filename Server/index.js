@@ -23,8 +23,7 @@ app.use(cookieParser());
 // make use of cors to do frontend request
 app.use(
   cors({ 
-    // origin: "http://localhost:3000",
-    origin: JSON.parse('https://study-hub-three.vercel.app'),
+    origin: "http://localhost:3000",
     credentials: true,
     })
 );
