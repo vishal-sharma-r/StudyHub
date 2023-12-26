@@ -22,10 +22,11 @@ app.use(express.json());
 app.use(cookieParser());
 // make use of cors to do frontend request
 app.use(
-  cors({ 
-    origin: "http://localhost:3000",
+  cors({
+    origin: JSON.parse(process.env.CORS_ORIGIN),
     credentials: true,
-    })
+    maxAge: 14400,
+  })
 );
 // file upload
 app.use(
